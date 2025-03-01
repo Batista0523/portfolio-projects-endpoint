@@ -13,5 +13,5 @@ CREATE TABLE projects (
     description VARCHAR,
     production_link VARCHAR,
     github_repo_back VARCHAR,
-    github_repo_front VARCHAR,
+    github_repo_front VARCHAR
 );
