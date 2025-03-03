@@ -50,6 +50,32 @@ Project.put("/:id", async (req, res) => {
   }
 });
 
+Project.post("/", async (req, res) => {
+  try {
+    const createdProject = await createProject(req.body);
+    if (createdProject) {
+      res.status(201).json({ success: true, payload: createdProject });
+    } else {
+      res.status(404).json({ success: false, error: "Page Not Found" });
+    }
+  } catch (err) {
+    console.error("Internal Error creating project", err);
+    res.status(500).json({ success: false, error: "Catch Internal error" });
+  }
+});
 
-
+Project.delete("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedProject = await deleteProject(id);
+    if (deletedProject) {
+      res.status(200).json({ success: true, payload: deletedProject });
+    } else {
+      res.status(404).json({ success: false, error: "Page Not Found" });
+    }
+  } catch (err) {
+    console.error("Internal Error deleting project", err);
+    res.status(500).json({ success: false, error: "Catch Internal error" });
+  }
+});
 module.exports = Project;
