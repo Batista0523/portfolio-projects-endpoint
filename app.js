@@ -3,11 +3,12 @@ const cors = require("cors");
 const app = express();
 //------------controllers  import ------------------
 const Projects = require("./Controllers/projectController.js");
-
+const contactMe = require("./Controllers/contactMeControllers.js");
 //------------controllers ^ import ------------------
 app.use(cors());
 app.use(express.json());
 app.use("/projects", Projects);
+app.use("/contactMe", contactMe);
 app.get("/", (req, res) => {
   res.send("Portoflio project endpoint");
 });

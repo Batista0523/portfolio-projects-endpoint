@@ -29,3 +29,13 @@ VALUES
     'https://github.com/myusername/ecommerce-backend', 
     'https://github.com/myusername/ecommerce-frontend'
 );
+INSERT INTO contact_me(
+        username,
+        email,
+        msg
+    )
+VALUES(
+        'Elisaul',
+        'batista_pro1@hotmail.com',
+        'hi i want to hire you'
+    );
